@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>~Abdullah&kulsoom~ - Event Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      position: relative;
+      color: #444;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('event2_7.jpg') no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(6px);
+      z-index: -1;
+    }
+    header {
+      background: rgba(233, 30, 99, 0.85);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .navigation-links {
+      text-align: center;
+      margin: 40px 0 60px;
+    }
+    .navigation-links a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #e91e63;
+      font-weight: bold;
+      font-size: 1.1em;
+      background: #fff8f5cc;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>~Abdullah&kulsoom~'s Wedding</h1>
+    <p>Romantic Moments from a Magical Celebration</p>
+  </header>
+
+  <div class="gallery">
+    <img src="event2_1.jpg" alt="~Abdullah&kulsoom~" />
+    <img src="event2_2.jpg" alt="~Abdullah&kulsoom~" />
+    <img src="event2_3.jpg" alt="~Abdullah&kulsoom~" />
+    <img src="event2_4.jpg" alt="~Abdullah&kulsoom~" />
+    <img src="event2_5.jpg" alt="~Abdullah&kulsoom~" />
+    <img src="event2_6.jpg" alt="~Abdullah&kulsoom~" />
+    <img src="event2_7.jpg" alt="~Abdullah&kulsoom~" />
+    <img src="event2_8.jpg" alt="~Abdullah&kulsoom~" />
+  </div>
+
+  <div class="navigation-links">
+    <a href="event1.html">&larr; Previous Event</a>
+    <a href="event3.html">Next Event &rarr;</a>
+    <a href="index.html">Back to Home</a>
+  </div>
+    <footer>
+    &copy; 2025 Lighting Emotion. All rights reserved. | Designed with love by Lighting Emotion Studio
+  </footer>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Packages - Lighting Emotion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('uploads/packages-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav a {
+      color: #f06292;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
+      color: #f8bbd0;
+      margin-bottom: 40px;
+    }
+
+    .packages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .package {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .package h2 {
+      font-family: 'Playfair Display', serif;
+      color: #f06292;
+      margin-bottom: 10px;
+    }
+
+    .package p {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    .terms {
+      margin-top: 60px;
+      text-align: left;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .terms h2 {
+      font-family: 'Playfair Display', serif;
+      color: #f8bbd0;
+      margin-bottom: 20px;
+    }
+
+    .terms ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    .terms li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.7);
+      color: #ccc;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+      font-size: 0.95em;
+    }
+
+    .nav-links {
+      margin-top: 20px;
+    }
+
+    .nav-links a {
+      display: inline-block;
+      margin: 0 15px;
+      color: #f06292;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="packages.html">Packages</a>
+    <a href="contact.html">Contact</a>
+    <a href="booking.html">Book Now</a>
+    <a href="payment.html">Payment</a>
+    <a href="login.html">Login</a>
+  </nav>
+
+  <div class="container">
+    <h1>Our Packages</h1>
+    <div class="packages">
+      <div class="package">
+        <h2>Basic Package</h2>
+        <p>4-hour photography session<br>Bridal/Couple Shoot<br>Two photographers<br>Unlimited softcopies<br>One Coffee Table Album<br><strong>PKR 30,000 / one day</strong></p>
+      </div>
+      <div class="package">
+        <h2>Standard Package</h2>
+        <p>5 Hours Coverage<br>Bridal/Couple Shoot<br>Two Coffee Table Albums<br>Unlimited softcopies<br>Two photographers & Two videographers<br>Photo + video coverage<br><strong>PKR 55,000 / one day</strong></p>
+      </div>
+      <div class="package">
+        <h2>Premium Package</h2>
+        <p>Pre-wedding + Wedding day<br>Bridal/Couple Shoot<br>
+
+Three Coffee Table Albums<br>
+
+Unlimited softcopies<br>
+
+Two photographer & Two videographer
+
+<br>2 luxury albums<br><strong>PKR 105,000/ TwoDays</strong></p>
+      </div>
+      <div class="package">
+        <h2> Premium Plus Package</h2>
+        <p>Bridal/Couple Shoot<br>
+
+Three Coffee Table Albums<br>
+
+Unlimited softcopies<br>
+
+Two photographer & Two videographer<br>
+
+Video Highlights & coverage in USB<br>2 luxury albums<br><strong>PKR 165,000/Three days</strong></p>
+      </div>
+    </div>
+
+    <div class="terms">
+      <h2>Terms & Conditions</h2>
+      <ul>
+        <li>At least 1 hour is required for a proper Bridal/Couple shoot. We’re not responsible if the time is not provided.</li>
+        <li>Event coverage will be done by team members.</li>
+        <li>Signature shots will be handled by either Usman Ali or Muhammad Haris.</li>
+        <li>In case of emergency or unavailability of the lead photographer, a backup will be provided.</li>
+        <li>Lighting Emotion reserves the right to use visuals for promotional content after client consent.</li>
+        <li>Photos may be featured as latest work with prior permission.</li>
+        <li>We shoot and edit according to our own creative style — please check our portfolio before hiring.</li>
+        <li>We reserve the right to leave an event in case of team mistreatment.</li>
+        <li>Any external venue for shoot is client’s responsibility (if other than wedding venue).</li>
+        <li>Extras like Sehra Bandi or bride’s arrival are charged at PKR 7,000 each.</li>
+        <li>Raw (compressed) data for selection will be provided within one week post-event.</li>
+        <li>Data will be deleted after 4 months from the wedding date. It is the client's responsibility to select within this period.</li>
+        <li>In case of major technical data failure, 50% of the total amount will be refunded.</li>
+        <li>All prices are valid until June 2025.</li>
+        <li>Outstation bookings require food, accommodation, and fuel to be covered by the client.</li>
+        <li>50% advance payment is required to confirm booking; balance is due on the event day.</li>
+        <li>Albums and videos will be delivered within 6–8 weeks from the selection date.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Lighting Emotion. All rights reserved. | Capturing Moments, Creating Memories
+  </footer>
+</body>
+</html>

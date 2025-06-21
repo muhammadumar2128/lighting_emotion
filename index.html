@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lighting Emotion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #fff8f5;
+      color: #444;
+    }
+
+    header {
+      position: relative;
+      background: url('image 1.jpg') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4em;
+      margin: 0;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    header p {
+      font-size: 1.3em;
+      margin-top: 10px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    nav {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: #e91e63;
+      margin: 0 18px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1em;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #c2185b;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .gallery-item {
+      text-align: center;
+    }
+
+    .gallery a img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery a img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .client-name {
+      margin-top: 8px;
+      font-size: 1em;
+      color: #c2185b;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="overlay"></div>
+    <div class="header-content">
+      <h1>Lighting Emotion</h1>
+      <p>Capture Your Dream Moments With Elegance</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="booking.html">Book Now</a>
+    <a href="contact.html">Contact</a>
+    <a href="payment.html">Payment</a>
+     <a href="packages.html">packages</a>
+     <a href="login.html">Login</a>
+  </nav>
+
+  <section id="portfolio">
+    <h2>Our Past Work</h2>
+    <p>Explore some of our favorite wedding moments we've captured. Each frame tells a story of love, tradition, and elegance.</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <a href="event1.html"><img src="image e 1.1.jpg" alt="Wedding 1"></a>
+        <div class="client-name"> ~Hussain&Irum~</div>
+      </div>
+      <div class="gallery-item">
+        <a href="event2.html"><img src="event2_1.jpg" alt="Wedding 2"></a>
+        <div class="client-name">~Abdullah&kulsoom~</div>
+      </div>
+      <div class="gallery-item">
+        <a href="event3.html"><img src="event3_1.jpg" alt="Wedding 3"></a>
+        <div class="client-name">~Hamza&Esha~</div>
+      </div>
+      <div class="gallery-item">
+        <a href="event4.html"><img src="event4_1.jpg" alt="Wedding 4"></a>
+        <div class="client-name">~Shoail&Laraib</div>
+      </div>
+      <div class="gallery-item">
+        <a href="event5.html"><img src="event5_1.jpg" alt="Wedding 5"></a>
+        <div class="client-name">~Hamza&Maira~</div>
+      </div>
+      <div class="gallery-item">
+        <a href="event6.html"><img src="event6_1.jpg" alt="Wedding 6"></a>
+        <div class="client-name">~Ibrar&Samina~ </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Lighting Emotion. All rights reserved. | Designed with love by Lighting Emotion Studio
+  </footer>
+
+</body>
+</html>

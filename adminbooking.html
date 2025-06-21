@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Bookings - Lighting Emotion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+    nav {
+      background: #222;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: #f06292;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .logout {
+      float: right;
+      margin-right: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #e91e63;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #f06292;
+      color: white;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .email-status {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="DashBorad.html">Dashboard</a>
+    <a href="adminbookings.html">Bookings</a>
+  
+    <a href="index.html" class="logout">Logout</a>
+  </nav>
+
+  <div class="container">
+    <h1>Client Booking Requests</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Booking ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Package</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="bookingTable">
+        <!-- Booking rows will be populated here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Dummy booking data - in real app, this comes from database
+    const bookings = [
+      { id: 'BK-240618-5821', name: 'Ali Khan', email: 'ali@example.com', pkg: 'Standard', date: '2025-07-05' },
+      { id: 'BK-240618-7312', name: 'Sara Khan', email: 'sara@example.com', pkg: 'Premium', date: '2025-08-01' }
+    ];
+
+    const table = document.getElementById("bookingTable");
+    bookings.forEach(b => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${b.id}</td>
+        <td>${b.name}</td>
+        <td>${b.email}</td>
+        <td>${b.pkg}</td>
+        <td>${b.date}</td>
+        <td>
+          <button onclick="confirmBooking('${b.email}', this)">Confirm</button>
+          <button onclick="sendMail('${b.email}')">Send Mail</button>
+        </td>
+      `;
+      table.appendChild(row);
+    });
+
+    function confirmBooking(email, btn) {
+      btn.parentElement.innerHTML = `<span class='email-status'>Confirmed & Mailed</span>`;
+      alert(`Booking confirmed and email sent to ${email}`);
+    }
+
+    function sendMail(email) {
+      alert(`Email sent to ${email}`);
+    }
+  </script>
+
+</body>
+</html>

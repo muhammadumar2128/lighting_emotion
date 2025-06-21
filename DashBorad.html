@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - Lighting Emotion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #f3f3f3;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #f06292;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8em;
+      font-family: 'Playfair Display', serif;
+    }
+    nav {
+      background: #444;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #f06292;
+    }
+    .dashboard {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .card h2 {
+      color: #f06292;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Admin Dashboard - Lighting Emotion
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="adminbooking.html">Bookings</a>
+    <a href="payment.html">Payments</a>
+    <a href="packages.html">Packages</a>
+    <a href="#">Logout</a>
+  </nav>
+
+  <div class="dashboard">
+    <div class="card">
+      <h2>Welcome, Admin!</h2>
+      <p>Use the navigation above to manage bookings, payments and more.</p>
+    </div>
+
+    <div class="card">
+      <h2>Quick Stats</h2>
+      <ul>
+        <li>Total Bookings: 128</li>
+        <li>Pending Payments: 32</li>
+        <li>Packages Offered: 4</li>
+        <li>Unread Messages: 5</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
