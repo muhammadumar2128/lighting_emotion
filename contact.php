@@ -1,3 +1,9 @@
+<?php
+session_start();
+$message = $_SESSION['contact_message'] ?? '';
+unset($_SESSION['contact_message']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +21,6 @@
       color: #fff;
       position: relative;
     }
-
     body::before {
       content: "";
       position: absolute;
@@ -23,7 +28,6 @@
       background: rgba(0, 0, 0, 0.6);
       z-index: 0;
     }
-
     nav {
       background: rgba(0, 0, 0, 0.7);
       padding: 15px 30px;
@@ -32,7 +36,6 @@
       display: flex;
       justify-content: center;
     }
-
     nav a {
       color: #f06292;
       text-decoration: none;
@@ -40,11 +43,9 @@
       font-weight: bold;
       font-size: 1.1em;
     }
-
     nav a:hover {
       text-decoration: underline;
     }
-
     .container {
       position: relative;
       z-index: 1;
@@ -55,7 +56,6 @@
       border-radius: 12px;
       backdrop-filter: blur(6px);
     }
-
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5em;
@@ -63,18 +63,24 @@
       text-align: center;
       margin-bottom: 30px;
     }
-
+    .message-box {
+      text-align: center;
+      background-color: rgba(76, 175, 80, 0.2);
+      color: #c8e6c9;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: <?php echo $message ? 'block' : 'none'; ?>;
+    }
     form {
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-
     label {
       font-weight: bold;
       color: #f06292;
     }
-
     input, textarea {
       padding: 12px;
       border-radius: 8px;
@@ -83,11 +89,9 @@
       background: rgba(255, 255, 255, 0.9);
       color: #333;
     }
-
     textarea {
       resize: vertical;
     }
-
     button {
       background-color: #f06292;
       color: white;
@@ -98,11 +102,9 @@
       cursor: pointer;
       transition: background 0.3s ease;
     }
-
     button:hover {
       background-color: #e91e63;
     }
-
     .info {
       margin-top: 40px;
       background-color: rgba(0,0,0,0.3);
@@ -112,34 +114,28 @@
       font-size: 1.05em;
       line-height: 2;
     }
-
     .info p {
       display: flex;
       align-items: center;
     }
-
     .info a {
       color: #f8bbd0;
       text-decoration: none;
       margin-left: 10px;
     }
-
     .info a:hover {
       text-decoration: underline;
     }
-
     .info i {
       margin-right: 10px;
       color: #f06292;
       font-size: 1.2em;
     }
-
     .whatsapp {
       margin-top: 15px;
       font-style: italic;
       color: #90ee90;
     }
-
     footer {
       background: rgba(0, 0, 0, 0.7);
       color: #ccc;
@@ -156,14 +152,17 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="packages.html">Packages</a>
-    <a href="contact.html">Contact</a>
-    <a href="booking.html">Book Now</a>
-    <a href="payment.html">Payment</a>
-    <a href="login.html">Login</a>
+    <a href="contact.php">Contact</a>
+    <a href="booking.php">Book Now</a>
+    <a href="payment.php">Payment</a>
+    <a href="login.php">Login</a>
   </nav>
 
   <div class="container">
     <h1>Contact Us</h1>
+    
+    <div class="message-box"><?php echo htmlspecialchars($message); ?></div>
+
     <form action="submit_contact.php" method="POST">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required>
@@ -189,7 +188,7 @@
       </p>
       <p><i class="fas fa-map-marker-alt"></i>
         <a href="https://maps.app.goo.gl/XAxVWgVK9oueRy8X7" target="_blank">
-          Taxila Cantt,Rawalpindi, Punjab, Pakistan
+          Taxila Cantt, Rawalpindi, Punjab, Pakistan
         </a>
       </p>
       <p class="whatsapp">
@@ -205,4 +204,3 @@
 
 </body>
 </html>
-

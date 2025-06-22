@@ -1,3 +1,8 @@
+<?php
+session_start();
+$message = $_SESSION['payment_message'] ?? '';
+unset($_SESSION['payment_message']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,13 +62,21 @@
       text-align: center;
       margin-bottom: 30px;
     }
+    .confirmation {
+      margin-bottom: 25px;
+      background-color: #4caf50;
+      padding: 15px;
+      border-radius: 6px;
+      text-align: center;
+      color: white;
+    }
     form label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
       color: #f06292;
     }
-    form input, form select, form textarea {
+    form input, form select {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
@@ -87,14 +100,6 @@
     form button:hover {
       background-color: #ec407a;
     }
-    .confirmation {
-      margin-top: 30px;
-      background: rgba(76, 175, 80, 0.2);
-      padding: 20px;
-      border-radius: 8px;
-      color: #c8e6c9;
-      display: none;
-    }
   </style>
 </head>
 <body>
@@ -102,15 +107,20 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="packages.html">Packages</a>
-    <a href="contact.html">Contact</a>
-    <a href="booking.html">Book Now</a>
-    <a href="payment.html">Payment</a>
-    <a href="login.html">login</a>
+    <a href="contact.php">Contact</a>
+    <a href="booking.php">Book Now</a>
+    <a href="payment.php">Payment</a>
+    <a href="login.php">Login</a>
   </nav>
 
   <div class="container">
     <h1>Complete Your Payment</h1>
-    <form id="paymentForm">
+
+    <?php if (!empty($message)): ?>
+      <div class="confirmation"><?php echo htmlspecialchars($message); ?></div>
+    <?php endif; ?>
+
+    <form id="paymentForm" action="submit_payment.php" method="POST">
       <label for="bookingId">Booking ID</label>
       <input type="text" id="bookingId" name="bookingId" required />
 
@@ -133,18 +143,6 @@
 
       <button type="submit">Submit Payment</button>
     </form>
-    <div class="confirmation" id="confirmation">
-      Thank you! Your payment has been submitted successfully.
-    </div>
   </div>
-
-  <script>
-    document.getElementById("paymentForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      // Normally here you'd send the data to your backend
-      document.getElementById("confirmation").style.display = 'block';
-      this.reset();
-    });
-  </script>
 </body>
 </html>

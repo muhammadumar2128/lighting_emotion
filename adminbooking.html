@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+// Ensure admin is logged in
+if (!isset($_SESSION['admin_logged_in'])) {
+  header("Location: login.html");
+  exit();
+}
+
+// DB Connection
+$conn = new mysqli("localhost", "root", "", "lighting_emotion");
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch bookings
+$sql = "SELECT booking_id, name, email, event_date, package_id FROM bookings";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,9 +98,8 @@
 
   <nav>
     <a href="DashBorad.html">Dashboard</a>
-    <a href="adminbookings.html">Bookings</a>
-  
-    <a href="index.html" class="logout">Logout</a>
+    <a href="adminbookings.php">Bookings</a>
+    <a href="logout.php" class="logout">Logout</a>
   </nav>
 
   <div class="container">
@@ -96,36 +115,33 @@
           <th>Action</th>
         </tr>
       </thead>
-      <tbody id="bookingTable">
-        <!-- Booking rows will be populated here -->
+      <tbody>
+        <?php
+        if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>{$row['booking_id']}</td>";
+            echo "<td>{$row['name']}</td>";
+            echo "<td>{$row['email']}</td>";
+            echo "<td>{$row['package_id']}</td>";
+            echo "<td>{$row['event_date']}</td>";
+            echo "<td>
+                    <button onclick=\"confirmBooking('{$row['email']}', this)\">Confirm</button>
+                    <button onclick=\"sendMail('{$row['email']}')\">Send Mail</button>
+                  </td>";
+            echo "</tr>";
+          }
+        } else {
+          echo "<tr><td colspan='6'>No bookings found.</td></tr>";
+        }
+
+        $conn->close();
+        ?>
       </tbody>
     </table>
   </div>
 
   <script>
-    // Dummy booking data - in real app, this comes from database
-    const bookings = [
-      { id: 'BK-240618-5821', name: 'Ali Khan', email: 'ali@example.com', pkg: 'Standard', date: '2025-07-05' },
-      { id: 'BK-240618-7312', name: 'Sara Khan', email: 'sara@example.com', pkg: 'Premium', date: '2025-08-01' }
-    ];
-
-    const table = document.getElementById("bookingTable");
-    bookings.forEach(b => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${b.id}</td>
-        <td>${b.name}</td>
-        <td>${b.email}</td>
-        <td>${b.pkg}</td>
-        <td>${b.date}</td>
-        <td>
-          <button onclick="confirmBooking('${b.email}', this)">Confirm</button>
-          <button onclick="sendMail('${b.email}')">Send Mail</button>
-        </td>
-      `;
-      table.appendChild(row);
-    });
-
     function confirmBooking(email, btn) {
       btn.parentElement.innerHTML = `<span class='email-status'>Confirmed & Mailed</span>`;
       alert(`Booking confirmed and email sent to ${email}`);

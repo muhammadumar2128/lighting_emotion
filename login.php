@@ -1,3 +1,7 @@
+<?php
+session_start();
+$error = $_GET['error'] ?? '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,36 +90,23 @@
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="packages.html">Packages</a>
-    <a href="contact.html">Contact</a>
-    <a href="booking.html">Book Now</a>
-    <a href="payment.html">Payment</a>
-    <a href="login.html">login</a>
+    <a href="contact.php">Contact</a>
+    <a href="booking.php">Book Now</a>
+    <a href="payment.php">Payment</a>
+    <a href="login.php">Login</a>
   </nav>
 
   <div class="login-container">
     <h1>Admin Login</h1>
-    <form id="loginForm">
-      <input type="text" id="username" placeholder="Username" required>
-      <input type="password" id="password" placeholder="Password" required>
+    <form action="admin_login.php" method="POST">
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Login</button>
-      <p class="error" id="errorMsg" style="display:none;">Invalid username or password</p>
+      <?php if (!empty($error)): ?>
+        <p class="error"><?php echo htmlspecialchars($error); ?></p>
+      <?php endif; ?>
     </form>
   </div>
-
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      // Simple example: hardcoded username and password
-      if(username === "admin" && password === "1234") {
-        window.location.href = "DashBorad.html";
-      } else {
-        document.getElementById("errorMsg").style.display = "block";
-      }
-    });
-  </script>
 
 </body>
 </html>
